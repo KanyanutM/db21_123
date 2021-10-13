@@ -7,7 +7,7 @@ $controllers = array('pages'=>['home','error'],
  
 
 function call($controller ,$action){
-    //echo "routes to ".$controller."-".$action."<br>" ;
+    echo "routes to ".$controller."-".$action."<br>" ;
     require_once("controllers/".$controller."_controller.php");
     switch($controller)
     {
