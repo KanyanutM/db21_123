@@ -22,11 +22,12 @@ class People{
 
     public static function getAll()
     {
-        $peopleList = [];
+        echo "1";
+        $peopleList=[];
         require("connection_connect.php");
-        $sql = "select * from People" ;
-        $result= $conn->query($sql);
-        while($my_row = $result->fetch_assoc())
+        $sql = "SELECT * FROM People" ;
+        $result=$conn->query($sql);
+        while($my_row=$result->fetch_assoc())
         {
             $id_card = $my_row[id_card];
             $Name = $my_row[Name];
