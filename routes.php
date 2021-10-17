@@ -13,14 +13,14 @@ function call($controller ,$action){
     {
         case "pages" : $controller = new PagesController() ; break ;
 
-        case "people" :  require_once("./models/people.php");
+        case "people" :  require_once("./model/people.php");
                          $controller = new PeopleController(); break ;
 
         
-        case "booking" : require_once("./models/booking.php") ; 
+        case "booking" : require_once("./model/booking.php") ; 
                          $controller = new BookingController(); break ;
 
-        case "ATKtest" : require_once("./models/ATKtest.php"); 
+        case "ATKtest" : require_once("./model/ATKtest.php"); 
                          $controller = new ATKtestController(); break ;
     }
     $controller->{$action}(); 
