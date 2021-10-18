@@ -1,6 +1,6 @@
 <?php
 $controllers = array('pages'=>['home','error'],
-'people' =>['index','newPeople','addPeople','search'],
+'people' =>['index','newPeople','addPeople','search','updateForm','update'],
 'booking' =>['index'],
 'ATKtest' =>['index']) ; 
 
