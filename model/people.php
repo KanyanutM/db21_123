@@ -25,8 +25,8 @@ class People{
         
         $peopleList=[];
         
-        require("conncetion_connect.php");
-        echo "1";
+        require("connection_connect.php");
+        //echo "1";
         $sql = "SELECT * FROM People" ;
         $result=$conn->query($sql);
         
