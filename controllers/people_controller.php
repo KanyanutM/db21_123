@@ -47,15 +47,29 @@
     public function update()
     {
         $id_card = $_GET['id_card'];
+        $NEWID = $_GET['ID'];
         $Name = $_GET['Name'];
         $lastname = $_GET['lastname'];
         $Address = $_GET['Address'];
         $county = $_GET['county'];
         $Province = $_GET['Province'];
         $Phone = $_GET['Phone'];
-        //echo $Payment_Type ; 
-        People::update($id_card,$Name,$lastname,$Address,$county,$Province,$Phone); 
+        People::update($id_card,$Name,$lastname,$Address,$county,$Province,$Phone,$NEWID); 
         PeopleController::index();
+    }
+
+    public function deleteConfirm()
+    {
+        //echo "11111111";
+        $id_card = $_GET['id_card'] ;  
+        $people = People::get($id_card) ;
+        require_once("./views/people/deleteConfirm.php");
+    }
+    public function delete()
+    {
+       $id_card = $_GET['id_card'];
+       People::delete($id_card);
+       PeopleController::index();
     }
 
 }
