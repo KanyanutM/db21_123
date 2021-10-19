@@ -23,7 +23,7 @@ class People{
     public static function get($id_card){
         //echo "get" ; 
         require("connection_connect.php");
-        $sql ="SELECT * FROM People WHERE is_card = '$id_card'" ;
+        $sql ="SELECT * FROM People WHERE id_card = '$id_card'" ;
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         $id_card = $my_row[id_card];
@@ -33,6 +33,7 @@ class People{
         $county = $my_row[county];
         $Province = $my_row[Province];
         $Phone = $my_row[Phone];
+        //echo $id_card;
         require("connection_close.php");
         return new People($id_card,$Name,$lastname,$Address,$county,$Province,$Phone);
     }
@@ -103,15 +104,15 @@ class People{
 
     }
 
-    public static function update($id_card,$Name,$lastname,$Address,$county,$Province,$Phone)
+    public static function update($id_card,$Name,$lastname,$Address,$county,$Province,$Phone,$NEWID)
     {
         //echo "1" ; 
         require("connection_connect.php");
         //echo $extra_color ; 
         $sql = "UPDATE People 
-                SET id_card = '$id_card' , People.Name = '$Name',lastname = '$lastname'
-                ,People.Address = '$Address',county = '$county',Province = '$Province', Phone = '$Phone' 
-                WHERE id_card = '$id_card' " ;
+                SET id_card = '$id_card' , People.Name = '$Name', lastname = '$lastname'
+                ,People.Address = '$Address', county = '$county', Province = '$Province', Phone = '$Phone' 
+                WHERE id_card = '$NEWID' " ;
         $result=$conn->query($sql);
         //echo $extra_color ; 
         require("connection_close.php");
