@@ -1,9 +1,9 @@
-<?php class CheckPoint{
-    public $id_card; 
+i<?php class CheckPoint{
+    public $id_cp; 
     public $NameCheckPoint; 
     
-    public function __construct($id_card,$NameCheckPoint){
-        $this->id_card = $id_card;
+    public function __construct($id_cp,$NameCheckPoint){
+        $this->id_cp = $id_cp;
         $this->NameCheckPoint = $NameCheckPoint;
     }
     public static function getAll(){
@@ -13,9 +13,9 @@
         $result=$conn->query($sql);
         while($my_row=$result->fetch_assoc())
         {
-            $id_card = $my_row[id];
+            $id_cp = $my_row[id];
             $NameCheckPoint = $my_row[name];
-            $CheckPointList[]= new CheckPoint($id_card,$NameCheckPoint);
+            $CheckPointList[]= new CheckPoint($id_cp,$NameCheckPoint);
         }
     
         require("connection_close.php");
