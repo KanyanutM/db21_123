@@ -2,74 +2,73 @@
 {
     public function index()
     {
-        $people_list = Booking::getAll();
+        $booking_list = Booking::getAll();
         require_once("./views/booking/index_booking.php");
     }
 
     public function newBooking()
     {
-    
-        require_once("./views/booking/newbooking.php");
+        $people_list=People::getAll();
+        $checkpoint_list=CheckPoint::getAll();
+        require_once("./views/booking/newBooking.php");
     }
 
     public function addBooking()
     {
         
         //echo "111111";
-        $id_card = $_GET['id_card'];
-        $Name = $_GET['Name'];
-        $lastname = $_GET['lastname'];
-        $Address = $_GET['Address'];
-        $county = $_GET['county'];
-        $Province = $_GET['Province'];
-        $Phone = $_GET['Phone'];
+        $id_b = $_GET['id_b'];
+        $date_b = $_GET['date_b'];
+        $time_b = $_GET['time_b'];
+        $id_card =$_GET['id_card'];
+        $Name_b = $_GET['Name'];
+        $Name_checkpoint = $_GET['NameCheckPoint'];
         //echo $id_card,$Name,$lastname,$Address,$county,$Province,$Phone; 
         
-        People::Add($id_card,$Name,$lastname,$Address,$county,$Province,$Phone) ;
+        Booking::Add($id_b,$date_b,$time_b,$id_card,$Name_b,$Name_checkpoint) ;
         //echo $add ;
-        PeopleController::index() ;
+        BookingController::index() ;
     }
 
     public function search()
     {
         $key = $_GET['key'];
-        $people_list = People::search($key);
-        require_once("./views/people/index_people.php");
+        $booking_list = Booking::search($key);
+        require_once("./views/booking/index_booking.php");
     }
     
     public function updateForm() 
     {
-        $id_card = $_GET['id_card'];
-        $people = People::get($id_card);
-        require_once("./views/people/updateForm.php");
+        $id_b = $_GET['id_b'];
+        $booking = Booking::get($id_b);
+        require_once("./views/booking/updateForm.php");
     }
 
     public function update()
     {
-        $id_card = $_GET['id_card'];
-        $NEWID = $_GET['ID'];
-        $Name = $_GET['Name'];
-        $lastname = $_GET['lastname'];
-        $Address = $_GET['Address'];
-        $county = $_GET['county'];
-        $Province = $_GET['Province'];
-        $Phone = $_GET['Phone'];
-        People::update($id_card,$Name,$lastname,$Address,$county,$Province,$Phone,$NEWID); 
-        PeopleController::index();
+        $id_b = $_GET['id_b'];
+        $NEWIDB = $_GET['IDB'];
+        $date_b = $_GET['date_b'];
+        $time_b = $_GET['time_b'];
+        $id_card =$_GET['id_card'];
+        $Name_b = $_GET['Name'];
+        $Name_checkpoint = $_GET['NameCheckPoint'];
+        Booking::update($id_b,$date_b,$time_b,$id_card,$Name_b,$Name_checkpoint,$NEWIDB); 
+        BookingController::index();
     }
 
     public function deleteConfirm()
     {
         //echo "11111111";
-        $id_card = $_GET['id_card'] ;  
-        $people = People::get($id_card) ;
-        require_once("./views/people/deleteConfirm.php");
+        $id_b = $_GET['id_b'];  
+        $booking = Booking::get($id_b) ;
+        require_once("./views/booking/deleteConfirm.php");
     }
     public function delete()
     {
-       $id_card = $_GET['id_card'];
-       People::delete($id_card);
-       PeopleController::index();
+       $id_b = $_GET['id_b'];
+       booking::delete($id_b);
+       BookingController::index();
     }
 
 }
