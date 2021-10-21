@@ -1,4 +1,4 @@
-<?php
+i<?php
 class People{
     public $id_card;
     public $Name;
