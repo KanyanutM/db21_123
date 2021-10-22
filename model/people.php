@@ -1,4 +1,4 @@
-i<?php
+<?php
 class People{
     public $id_card;
     public $Name;
@@ -27,7 +27,7 @@ class People{
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         $id_card = $my_row[id_card];
-        $Name = $my_row[Name];
+        $Name = $my_row[Name_p];
         $lastname = $my_row[lastname];
         $Address = $my_row[Address];
         $county = $my_row[county];
@@ -52,7 +52,7 @@ class People{
         {
             //echo "1";
             $id_card = $my_row[id_card];
-            $Name = $my_row[Name];
+            $Name = $my_row[Name_p];
             $lastname = $my_row[lastname];
             $Address = $my_row[Address];
             $county = $my_row[county];
@@ -71,7 +71,7 @@ class People{
         
         require("connection_connect.php");
         //echo $QID ; 
-        $sql ="INSERT INTO People(id_card,People.Name,lastname,People.Address,county,Province,Phone) 
+        $sql ="INSERT INTO People(id_card,Name_p,lastname,People.Address,county,Province,Phone) 
                VALUES ('$id_card','$Name','$lastname','$Address','$county','$Province','$Phone')";
         $result=$conn->query($sql);
         require("connection_close.php");
@@ -83,13 +83,13 @@ class People{
         $peopleList=[];
         require("connection_connect.php");
         $sql = "SELECT * FROM People
-        where (People.id_card LIKE '%$key%' OR People.Name LIKE '%$key%' OR People.lastname LIKE '%$key%' OR People.Address LIKE '%$key%' 
+        where (People.id_card LIKE '%$key%' OR People.Name_p LIKE '%$key%' OR People.lastname LIKE '%$key%' OR People.Address LIKE '%$key%' 
         OR People.county LIKE '%$key%' OR People.Province LIKE '%$key%' OR People.Phone LIKE '%$key%')";
         $result=$conn->query($sql);
         while($my_row=$result->fetch_assoc())
         {
             $id_card = $my_row[id_card];
-            $Name = $my_row[Name];
+            $Name = $my_row[Name_p];
             $lastname = $my_row[lastname];
             $Address = $my_row[Address];
             $county = $my_row[county];
@@ -110,7 +110,7 @@ class People{
         require("connection_connect.php");
         //echo $extra_color ; 
         $sql = "UPDATE People 
-                SET id_card = '$id_card' , People.Name = '$Name', lastname = '$lastname'
+                SET id_card = '$id_card' , Name_p = '$Name', lastname = '$lastname'
                 ,People.Address = '$Address', county = '$county', Province = '$Province', Phone = '$Phone' 
                 WHERE id_card = '$NEWID' " ;
         $result=$conn->query($sql);
