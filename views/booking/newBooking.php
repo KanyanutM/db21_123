@@ -5,7 +5,7 @@
     <label>time_b <input type="text" name="time_b" /> </label><br>
     <label>id_card <input type="text" name="id_card" /> </label><br>
     <label>Name_b <select name="Name_b">
-        <?php foreach($people_list as $Name_b){echo "<option value= $Name_b->id_card>$Name_b->Name</option>";}?></select></label><br>
+        <?php foreach($people_list as $Name_b){echo "<option value= $Name_b->id_card>$Name_b->Name_p</option>";}?></select></label><br>
     <label>Name_checkpoint <select name="Name_checkpoint">
         <?php foreach($checkpoint_list as $Name_checkpoint){echo "<option value= $Name_checkpoint->id_cp>$Name_checkpoint->NameCheckPoint</option>";}?></select></label><br>
     
