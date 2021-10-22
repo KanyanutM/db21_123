@@ -13,7 +13,7 @@
          if($Name_b->id_card==$booking->Name_b){
              echo " selected='selected'" ;
             }
-            echo ">$Name_b->Name</option>";
+            echo ">$Name_b->Name_p</option>";
       }?></select></label><br>
     <label>Name_checkpoint <select name="Name_checkpoint">
        <?php foreach($CheckPointList as $Name_checkpoint){
