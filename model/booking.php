@@ -20,7 +20,7 @@ class Booking{
     public static function getAll(){
         $bookingList=[];
         require("connection_connect.php");
-        $sql ="SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.Name,CheckPoint.name as NameCheckPoint FROM 
+        $sql ="SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.Name,CheckPoint.name  FROM 
         (SELECT Booking.id_b,Booking.date_b,Booking.time_b,Booking.id_card,People.Name ,Booking.id_checkpoint 
         FROM Booking INNER JOIN People ON Booking.id_card = People.id_card) AS B INNER JOIN CheckPoint ON B.id_checkpoint = CheckPoint.id " ;
         $result=$conn->query($sql);
@@ -31,7 +31,7 @@ class Booking{
             $time_b = $my_row[time_b];
             $id_card =$my_row[id_card];
             $Name_b = $my_row[Name];
-            $Name_checkpoint = $my_row[NameCheckPoint];
+            $Name_checkpoint = $my_row[name];
             $bookingList[]= new Booking($id_b,$date_b,$time_b,$id_card,$Name_b,$Name_checkpoint);
         }
 
@@ -39,7 +39,7 @@ class Booking{
         return $bookingList ;
     }
 
-    public static function get($id_b){
+    /*public static function get($id_b){
         //echo "get" ; 
         require("connection_connect.php");
         $sql ="SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.Name,CheckPoint.name as NameCheckPoint FROM 
@@ -121,6 +121,6 @@ class Booking{
         $result=$conn->query($sql);
         require("connection_close.php");
         return "delete success $result row";
-    }
+    }*/
 
 }
