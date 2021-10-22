@@ -2,11 +2,12 @@
 {
     public function index()
     {
+        echo "1111111111111";
         $booking_list = Booking::getAll();
         require_once("./views/booking/index_booking.php");
     }
 
-    public function newBooking()
+    /*public function newBooking()
     {
         $people_list=People::getAll();
         $checkpoint_list=CheckPoint::getAll();
@@ -69,7 +70,7 @@
        $id_b = $_GET['id_b'];
        booking::delete($id_b);
        BookingController::index();
-    }
+    }*/
 
 }
 ?>
