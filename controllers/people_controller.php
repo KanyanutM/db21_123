@@ -18,7 +18,7 @@
         
         //echo "111111";
         $id_card = $_GET['id_card'];
-        $Name = $_GET['Name'];
+        $Name = $_GET['Name_p'];
         $lastname = $_GET['lastname'];
         $Address = $_GET['Address'];
         $county = $_GET['county'];
@@ -49,7 +49,7 @@
     {
         $id_card = $_GET['id_card'];
         $NEWID = $_GET['ID'];
-        $Name = $_GET['Name'];
+        $Name = $_GET['Name_p'];
         $lastname = $_GET['lastname'];
         $Address = $_GET['Address'];
         $county = $_GET['county'];
