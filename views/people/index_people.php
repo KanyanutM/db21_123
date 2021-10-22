@@ -6,7 +6,7 @@
 <table border = 1>
 
 
-    new quotation <a href="?controller=people&action=newPeople">click</a><br>
+    new people <a href="?controller=people&action=newPeople">click</a><br>
 
     <form method="get"action="">
         <input type="text" name="key">
