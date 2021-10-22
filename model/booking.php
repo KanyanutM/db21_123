@@ -10,7 +10,7 @@ class Booking{
     public function __construct($id_b,$date_b,$time_b,$id_card,$Name_b,$Name_checkpoint)
     {
         $this->id_b = $id_b;
-        $this->data_b = $data_b;
+        $this->date_b = $date_b;
         $this->time_b = $time_b;
         $this->id_card = $id_card;
         $this->Name_b = $Name_b;
@@ -24,6 +24,7 @@ class Booking{
         (SELECT Booking.id_b,Booking.date_b,Booking.time_b,Booking.id_card,People.Name ,Booking.id_checkpoint 
         FROM Booking INNER JOIN People ON Booking.id_card = People.id_card) AS B INNER JOIN CheckPoint ON B.id_checkpoint = CheckPoint.id " ;
         $result=$conn->query($sql);
+        //echo $result;
         while($my_row=$result->fetch_assoc())
         {
             $id_b = $my_row[id_b];
