@@ -2,7 +2,7 @@
 <table border = 1>
 
 
-    new quotation <a href="?controller=booking&action=newBooking">click</a><br>
+    new booking <a href="?controller=booking&action=newBooking">click</a><br>
 
     <form method="get"action="">
         <input type="text" name="key">
