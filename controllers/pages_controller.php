@@ -2,8 +2,8 @@
 class PageController
 {
     public function home()
-    { require_once('views/page/home.php');}
+    { require_once('views/Page/home.php');}
     public function error()
-    { require_once("views/page/error.php");}
+    { require_once("views/Page/error.php");}
 }
 ?>
