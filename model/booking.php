@@ -18,6 +18,8 @@ class Booking{
     }
 
     public static function getAll(){
+
+        echo "1111111111";
         $bookingList=[];
         require("connection_connect.php");
         $sql ="SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.Name,CheckPoint.name  FROM 
