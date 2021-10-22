@@ -1,4 +1,4 @@
-i<?php class CheckPoint{
+<?php class CheckPoint{
     public $id_cp; 
     public $NameCheckPoint; 
     
