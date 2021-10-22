@@ -2,6 +2,7 @@
 {
     public function index()
     {
+        //echo "1111111111111";
         $people_list = People::getAll();
         require_once("./views/people/index_people.php");
     }
