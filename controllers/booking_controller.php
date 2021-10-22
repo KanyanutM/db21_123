@@ -2,12 +2,12 @@
 {
     public function index()
     {
-        echo "1111111111111";
+        //echo "1111111111111";
         $booking_list = Booking::getAll();
         require_once("./views/booking/index_booking.php");
     }
 
-    /*public function newBooking()
+    public function newBooking()
     {
         $people_list=People::getAll();
         $checkpoint_list=CheckPoint::getAll();
@@ -22,7 +22,7 @@
         $date_b = $_GET['date_b'];
         $time_b = $_GET['time_b'];
         $id_card =$_GET['id_card'];
-        $Name_b = $_GET['Name'];
+        $Name_b = $_GET['Name_p'];
         $Name_checkpoint = $_GET['NameCheckPoint'];
         //echo $id_card,$Name,$lastname,$Address,$county,$Province,$Phone; 
         
@@ -52,7 +52,7 @@
         $date_b = $_GET['date_b'];
         $time_b = $_GET['time_b'];
         $id_card =$_GET['id_card'];
-        $Name_b = $_GET['Name'];
+        $Name_b = $_GET['Name_p'];
         $Name_checkpoint = $_GET['NameCheckPoint'];
         Booking::update($id_b,$date_b,$time_b,$id_card,$Name_b,$Name_checkpoint,$NEWIDB); 
         BookingController::index();
@@ -70,7 +70,7 @@
        $id_b = $_GET['id_b'];
        booking::delete($id_b);
        BookingController::index();
-    }*/
+    }
 
 }
 ?>
