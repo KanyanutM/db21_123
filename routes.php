@@ -17,8 +17,12 @@ function call($controller ,$action){
                          $controller = new PeopleController(); break ;
 
         
-        case "booking" : require_once("./model/booking.php") ; 
-                         require_once("./model/CheckPoint.php") ; 
+        case "booking" : 
+                         require_once("./model/booking.php"); 
+                         echo "111111";
+                         require_once("./model/CheckPoint.php"); 
+                         require_once("./model/people.php");
+                         
                          $controller = new BookingController(); break ;
 
         case "ATKtest" : require_once("./model/ATKtest.php"); 
