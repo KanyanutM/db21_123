@@ -1,6 +1,11 @@
 
-<table border = 1>
+<?php
+    echo "กัญญาณัฐ ตั้งเจริญ 6220502060"
+?>
+<br>
 
+
+<table border = 1>
 
     new booking <a href="?controller=booking&action=newBooking">click</a><br>
 
