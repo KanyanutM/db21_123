@@ -22,11 +22,12 @@
         $date_b = $_GET['date_b'];
         $time_b = $_GET['time_b'];
         $id_card =$_GET['id_card'];
-        $Name_b = $_GET['Name_p'];
+        $NamePeople = $_GET['NamePeople'];
+        $LastnameP = $_GET['LastnameP'];
         $Name_checkpoint = $_GET['NameCheckPoint'];
         //echo $id_card,$Name,$lastname,$Address,$county,$Province,$Phone; 
         
-        Booking::Add($id_b,$date_b,$time_b,$id_card,$Name_b,$Name_checkpoint) ;
+        Booking::Add($id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint) ;
         //echo $add ;
         BookingController::index() ;
     }
@@ -52,9 +53,10 @@
         $date_b = $_GET['date_b'];
         $time_b = $_GET['time_b'];
         $id_card =$_GET['id_card'];
-        $Name_b = $_GET['Name_p'];
+        $NamePeople = $_GET['NamePeople'];
+        $LastnameP = $_GET['LastnameP'];
         $Name_checkpoint = $_GET['NameCheckPoint'];
-        Booking::update($id_b,$date_b,$time_b,$id_card,$Name_b,$Name_checkpoint,$NEWIDB); 
+        Booking::update($id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint,$NEWIDB); 
         BookingController::index();
     }
 
