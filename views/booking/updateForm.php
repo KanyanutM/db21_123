@@ -7,13 +7,21 @@
               value="<?php echo $booking->time_b; ?>" /> </label><br>
     <label>id_card <input type="text" name="id_card"
               value="<?php echo $booking->id_card; ?>" /> </label><br>
-    <label>Name_b <select name="Name_b">
-       <?php foreach($people_list as $Name_b){
-           echo "<option value= $Name_b->id_card";
-         if($Name_b->id_card==$booking->Name_b){
+    <label>NamePeople <select name="NamePeople">
+       <?php foreach($people_list as $NamePeople){
+           echo "<option value= $NamePeople->id_card";
+         if($NamePeople->id_card==$booking->NamePeople){
              echo " selected='selected'" ;
             }
-            echo ">$Name_b->Name_p</option>";
+            echo ">$NamePeople->NamePeople</option>";
+      }?></select></label><br>
+    <label>LastnameP <select name="LastnameP">
+       <?php foreach($people_list as $LastnameP){
+           echo "<option value= $LastnameP->id_card";
+         if($LastnameP->id_card==$booking->LastnameP){
+             echo " selected='selected'" ;
+            }
+            echo ">$LastnameP->LastnameP</option>";
       }?></select></label><br>
     <label>Name_checkpoint <select name="Name_checkpoint">
        <?php foreach($CheckPointList as $Name_checkpoint){
