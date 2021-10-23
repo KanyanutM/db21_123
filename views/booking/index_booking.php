@@ -21,7 +21,8 @@
         <td>date_b</td>
         <td>time_b</td>
         <td>id_card</td>
-        <td>Name_b</td>
+        <td>NamePeople</td>
+        <td>LastnameP</td>
         <td>Name_checkpoint</td>
         <td> update</td>
         <td> delete </td>
@@ -34,7 +35,8 @@
      <td>$booking->date_b</td>
      <td>$booking->time_b</td>
      <td>$booking->id_card</td>
-     <td>$booking->Name_b</td>
+     <td>$booking->NamePeople</td>
+     <td>$booking->LastnameP</td>
      <td>$booking->Name_checkpoint</td>
      <td><a href=?controller=booking&action=updateForm&id_b=$booking->id_b>update</a></td>
      <td><a href=?controller=booking&action=deleteConfirm&id_b=$booking->id_b>delete</a> </td> </tr>" ;
