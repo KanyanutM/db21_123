@@ -17,10 +17,10 @@
 
     <tr>
         <td>id_card</td>
-        <td>Name</td>
-        <td>lastname</td>
+        <td>NamePeople</td>
+        <td>LastnameP</td>
         <td>Address</td>
-        <td>county</td>
+        <td>County</td>
         <td>Province</td>
         <td>Phone</td>
         <td> update</td>
@@ -31,10 +31,10 @@
  {
      echo "<tr>
      <td>$people->id_card</td>
-     <td>$people->Name</td>
-     <td>$people->lastname</td>
+     <td>$people->NamePeople</td>
+     <td>$people->LastnameP</td>
      <td>$people->Address</td>
-     <td>$people->county</td>
+     <td>$people->County</td>
      <td>$people->Province</td>
      <td>$people->Phone</td>
      <td><a href=?controller=people&action=updateForm&id_card=$people->id_card>update</a></td>
