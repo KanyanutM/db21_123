@@ -1,14 +1,14 @@
 <form method ="get" action="">
     <label>id_card <input type="text" name="id_card"
              value="<?php echo $people->id_card; ?>" /> </label><br>
-    <label>Name <input type="text" name="Name"
-              value="<?php echo $people->Name; ?>" /> </label><br>
-    <label>lastname <input type="text" name="lastname"
-             value="<?php echo $people->lastname; ?>" /> </label><br>
+    <label>NamePeople <input type="text" name="NamePeople"
+              value="<?php echo $people->NamePeople; ?>" /> </label><br>
+    <label>LastnameP <input type="text" name="LastnameP"
+             value="<?php echo $people->LastnameP; ?>" /> </label><br>
     <label>Address <input type="text" name="Address"
              value="<?php echo $people->Address; ?>" /> </label><br>
-    <label>county <input type="text" name="county"
-             value="<?php echo $people->county; ?>" /> </label><br>
+    <label>County <input type="text" name="County"
+             value="<?php echo $people->County; ?>" /> </label><br>
     <label>Province <input type="text" name="Province"
              value="<?php echo $people->Province; ?>" /> </label><br>
     <label>Phone <input type="text" name="Phone"
