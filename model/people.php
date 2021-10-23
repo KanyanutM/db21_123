@@ -1,20 +1,20 @@
 <?php
 class People{
     public $id_card;
-    public $Name;
-    public $lastname;
+    public $NamePeople;
+    public $LastnameP;
     public $Address;
-    public $county;
+    public $County;
     public $Province;
     public $Phone;
 
-    public function __construct($id_card,$Name,$lastname,$Address,$county,$Province,$Phone)
+    public function __construct($id_card,$NamePeople,$LastnameP,$Address,$County,$Province,$Phone)
     {
         $this->id_card = $id_card;
-        $this->Name = $Name;
-        $this->lastname = $lastname;
+        $this->NamePeople = $NamePeople;
+        $this->LastnameP = $LastnameP;
         $this->Address = $Address;
-        $this->county = $county;
+        $this->County = $County;
         $this->Province = $Province;
         $this->Phone = $Phone;
 
@@ -27,15 +27,15 @@ class People{
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         $id_card = $my_row[id_card];
-        $Name = $my_row[Name_p];
-        $lastname = $my_row[lastname];
+        $NamePeople = $my_row[NamePeople];
+        $LastnameP = $my_row[LastnameP];
         $Address = $my_row[Address];
-        $county = $my_row[county];
+        $County = $my_row[County];
         $Province = $my_row[Province];
         $Phone = $my_row[Phone];
         //echo $id_card;
         require("connection_close.php");
-        return new People($id_card,$Name,$lastname,$Address,$county,$Province,$Phone);
+        return new People($id_card,$NamePeople,$LastnameP,$Address,$County,$Province,$Phone);
     }
 
     public static function getAll()
@@ -52,13 +52,13 @@ class People{
         {
             //echo "1";
             $id_card = $my_row[id_card];
-            $Name = $my_row[Name_p];
-            $lastname = $my_row[lastname];
+            $NamePeople = $my_row[NamePeople];
+            $LastnameP = $my_row[LastnameP];
             $Address = $my_row[Address];
-            $county = $my_row[county];
+            $County = $my_row[County];
             $Province = $my_row[Province];
             $Phone = $my_row[Phone];
-            $peopleList[]=new People($id_card,$Name,$lastname,$Address,$county,$Province,$Phone);
+            $peopleList[]=new People($id_card,$NamePeople,$LastnameP,$Address,$County,$Province,$Phone);
 
         }
         require("connection_close.php");
@@ -66,13 +66,13 @@ class People{
 
     }
 
-    public static function Add($id_card,$Name,$lastname,$Address,$county,$Province,$Phone)
+    public static function Add($id_card,$NamePeople,$LastnameP,$Address,$County,$Province,$Phone)
     {
         
         require("connection_connect.php");
         //echo $QID ; 
-        $sql ="INSERT INTO People(id_card,Name_p,lastname,People.Address,county,Province,Phone) 
-               VALUES ('$id_card','$Name','$lastname','$Address','$county','$Province','$Phone')";
+        $sql ="INSERT INTO People(id_card,NamePeople,LastnameP,People.Address,County,Province,Phone) 
+               VALUES ('$id_card','$NamePeople','$LastnameP','$Address','$County','$Province','$Phone')";
         $result=$conn->query($sql);
         require("connection_close.php");
         return "Add success $result rows";
@@ -83,19 +83,19 @@ class People{
         $peopleList=[];
         require("connection_connect.php");
         $sql = "SELECT * FROM People
-        where (People.id_card LIKE '%$key%' OR People.Name_p LIKE '%$key%' OR People.lastname LIKE '%$key%' OR People.Address LIKE '%$key%' 
-        OR People.county LIKE '%$key%' OR People.Province LIKE '%$key%' OR People.Phone LIKE '%$key%')";
+        where (People.id_card LIKE '%$key%' OR People.NamePeople LIKE '%$key%' OR People.LastnameP LIKE '%$key%' OR People.Address LIKE '%$key%' 
+        OR People.County LIKE '%$key%' OR People.Province LIKE '%$key%' OR People.Phone LIKE '%$key%')";
         $result=$conn->query($sql);
         while($my_row=$result->fetch_assoc())
         {
             $id_card = $my_row[id_card];
-            $Name = $my_row[Name_p];
-            $lastname = $my_row[lastname];
+            $NamePeople = $my_row[NamePeople];
+            $LastnameP = $my_row[LastnameP];
             $Address = $my_row[Address];
-            $county = $my_row[county];
+            $County = $my_row[County];
             $Province = $my_row[Province];
             $Phone = $my_row[Phone];
-            $peopleList[]=new People($id_card,$Name,$lastname,$Address,$county,$Province,$Phone);
+            $peopleList[]=new People($id_card,$NamePeople,$LastnameP,$Address,$County,$Province,$Phone);
             
         }
 
@@ -104,14 +104,14 @@ class People{
 
     }
 
-    public static function update($id_card,$Name,$lastname,$Address,$county,$Province,$Phone,$NEWID)
+    public static function update($id_card,$NamePeople,$LastnameP,$Address,$County,$Province,$Phone,$NEWID)
     {
         //echo "1" ; 
         require("connection_connect.php");
         //echo $extra_color ; 
         $sql = "UPDATE People 
-                SET id_card = '$id_card' , Name_p = '$Name', lastname = '$lastname'
-                ,People.Address = '$Address', county = '$county', Province = '$Province', Phone = '$Phone' 
+                SET id_card = '$id_card' , NamePeople = '$NamePeople', LastnameP = '$LastnameP'
+                ,People.Address = '$Address', County = '$County', Province = '$Province', Phone = '$Phone' 
                 WHERE id_card = '$NEWID' " ;
         $result=$conn->query($sql);
         //echo $extra_color ; 
