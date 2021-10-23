@@ -1,10 +1,10 @@
 <form method="get" action="">
     
     <label>id_card <input type="text" name="id_card" /> </label><br>
-    <label>Name <input type="text" name="Name" /> </label><br>
-    <label>lastname <input type="text" name="lastname" /> </label><br>
+    <label>NamePeople <input type="text" name="NamePeople" /> </label><br>
+    <label>LastnameP <input type="text" name="LastnameP" /> </label><br>
     <label>Address <input type="text" name="Address" /> </label><br>
-    <label>county <input type="text" name="county" /> </label><br>
+    <label>County <input type="text" name="County" /> </label><br>
     <label>Province <input type="text" name="Province" /> </label><br>
     <label>Phone <input type="text" name="Phone" /> </label><br>
     
