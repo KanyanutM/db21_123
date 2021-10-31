@@ -26,10 +26,10 @@
     <label>Name_checkpoint <select name="Name_checkpoint">
        <?php foreach($CheckPointList as $Name_checkpoint){
          echo "<option value= $Name_checkpoint->id_cp";
-         if($Name_checkpoint->id_cp==$booking->NameCheckPoint){
+         if($Name_checkpoint->id_cp==$booking->Name_checkpoint){
                 echo " selected='selected'" ;
             }
-            echo ">$Name_checkpoint->NameCheckPoint</option>";
+            echo ">$Name_checkpoint->Name_checkpoint</option>";
      }?></select></label><br>
     
 
