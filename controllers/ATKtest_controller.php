@@ -7,41 +7,44 @@
         require_once("./views/ATKtest/index_atk.php");
     }
 
-    public function newBooking()
+    public function newATK()
     {
         $people_list=People::getAll();
         $checkpoint_list=CheckPoint::getAll();
-        require_once("./views/booking/newBooking.php");
+        $booking_list=Booking::getAll();
+        require_once("./views/ATKtest/newATK.php");
     }
 
-    public function addBooking()
+    public function addATK()
     {
         
         //echo "111111";
+        $id_atk = $_GET['id_atk'];
+        $date_atk = $_GET['date_atk'];
+        $time_atk = $_GET['time_atk'];
+        $results = $_GET['results'];
         $id_b = $_GET['id_b'];
-        $date_b = $_GET['date_b'];
-        $time_b = $_GET['time_b'];
         $id_card =$_GET['id_card'];
         $NamePeople = $_GET['NamePeople'];
         $LastnameP = $_GET['LastnameP'];
-        $Name_checkpoint = $_GET['NameCheckPoint'];
+        $Name_checkpoint = $_GET['name'];
         //echo $id_card,$Name,$lastname,$Address,$county,$Province,$Phone; 
         
-        Booking::Add($id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint) ;
+        ATKtest::Add($id_atk,$date_atk,$time_atk,$results,$id_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint) ;
         //echo $add ;
-        BookingController::index() ;
+        ATKtestController::index() ;
     }
 
     public function search()
     {
         $key = $_GET['key'];
-        $booking_list = Booking::search($key);
-        require_once("./views/booking/index_booking.php");
+        $atktest_list = ATKtest::search($key);
+        require_once("./views/ATKtest/newATK.php");
     }
     
     public function updateForm() 
     {
-        $id_b = $_GET['id_b'];
+        $id_b = $_GET['id_atk'];
         $booking = Booking::get($id_b);
         require_once("./views/booking/updateForm.php");
     }
