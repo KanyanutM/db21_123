@@ -60,7 +60,7 @@ class Booking{
         $id_card =$my_row[id_card];
         $NamePeople = $my_row[NamePeople];
         $LastnameP = $my_row[LastnameP];
-        $Name_checkpoint = $my_row[NameCheckPoint];
+        $Name_checkpoint = $my_row[name];
         //echo $id_card;
         require("connection_close.php");
         return new Booking($id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint);
@@ -71,7 +71,7 @@ class Booking{
         
         require("connection_connect.php");
         //echo $QID ; 
-        $sql ="INSERT INTO Booking(id_b,data_b,time_b,id_card,NamePeople,LastnameP,NameCheckPoint) 
+        $sql ="INSERT INTO Booking(id_b,data_b,time_b,id_card,NamePeople,LastnameP,Name_checkpoint) 
                VALUES ('$id_b','$date_b','$time_b','$id_card','$NamePeople','$LastnameP','$Name_checkpoint')";
         $result=$conn->query($sql);
         require("connection_close.php");
@@ -96,7 +96,7 @@ class Booking{
             $id_card =$my_row[id_card];
             $NamePeople = $my_row[NamePeople];
             $LastnameP = $my_row[LastnameP];
-            $Name_checkpoint = $my_row[NameCheckPoint];
+            $Name_checkpoint = $my_row[Name_checkpoint];
             $bookingList[]=new Booking($id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint);
             
         }
@@ -113,7 +113,7 @@ class Booking{
         //echo $extra_color ; 
         $sql = "UPDATE Booking 
                 SET id_b = '$id_b' , date_b = '$date_b', time_b = '$time_b'
-                ,id_card = '$id_card', NamePeople = '$NamePeople' ,LastnameP = '$LastnameP' , NameCheckPoint = '$Name_checkpoint'
+                ,id_card = '$id_card', NamePeople = '$NamePeople' ,LastnameP = '$LastnameP' , Name_checkpoint = '$Name_checkpoint'
                 WHERE id_b = '$NEWIDB' " ;
         $result=$conn->query($sql);
         //echo $extra_color ; 
