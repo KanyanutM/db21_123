@@ -9,7 +9,7 @@
     <label>LastnameP <select name="LastnameP">
         <?php foreach($people_list as $LastnameP){echo "<option value= $LastnameP->id_card>$LastnameP->LastnameP</option>";}?></select></label><br>
     <label>Name_checkpoint <select name="Name_checkpoint">
-        <?php foreach($checkpoint_list as $Name_checkpoint){echo "<option value= $Name_checkpoint->id_cp>$Name_checkpoint->NameCheckPoint</option>";}?></select></label><br>
+        <?php foreach($checkpoint_list as $Name_checkpoint){echo "<option value= $Name_checkpoint->id_cp>$Name_checkpoint->Name_checkpoint</option>";}?></select></label><br>
     
     
     <input type="hidden" name="controller" value="booking"/>
