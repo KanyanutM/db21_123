@@ -47,6 +47,7 @@
     
     public function updateForm() 
     {
+        //echo "11111";
         $id_atk = $_GET['id_atk'];
         $atktest = ATKtest::get($id_atk);
         $people_list=People::getAll();
@@ -59,18 +60,19 @@
 
     public function update()
     {
-        $id_atk = $_GET['id_atk'];
-        $NEWID = $_GET['ID'];
-        $date_atk = $_GET['date_atk'];
-        $time_atk = $_GET['time_atk'];
-        $results = $_GET['results'];
-        $id_b = $_GET['id_b'];
-        $id_staff = $_GET['id_staff'];
+        $id_atk = $_GET['newid'];
+        $NEWIDatk = $_GET['ID'];
+        $date_atk = $_GET['new_date'];
+        $time_atk = $_GET['new_time'];
+        $results = $_GET['new_results'];
+        $id_b = $_GET['new_idb'];
+        $id_staff = $_GET['new_ids'];
+        //echo $id_atk,$date_atk,$time_atk,$results,$id_b,$id_staff,$NEWIDatk;
         //$id_card =$_GET['id_card'];
         //$NamePeople = $_GET['NamePeople'];
         //$LastnameP = $_GET['LastnameP'];
         //$Name_checkpoint = $_GET['Name_checkpoint'];
-        ATKtest::update($id_atk,$date_atk,$time_atk,$results,$id_b,$id_staff,$NEWID); 
+        ATKtest::update($id_atk,$date_atk,$time_atk,$results,$id_b,$id_staff); 
         ATKtestController::index();
     }
 
