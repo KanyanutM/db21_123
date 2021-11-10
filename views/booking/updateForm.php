@@ -1,28 +1,19 @@
 <form method ="get" action="">
     <label>id_b <input type="text" name="id_b"
              value="<?php echo $booking->id_b; ?>" /> </label><br>
-    <label>date_b <input type="text" name="date_b"
+    <label>date_b <input type="date" name="date_b"
               value="<?php echo $booking->date_b; ?>" /> </label><br>
-    <label>time_b <input type="text" name="time_b"
+    <label>time_b <input type="time" name="time_b"
               value="<?php echo $booking->time_b; ?>" /> </label><br>
-    <label>id_card <input type="text" name="id_card"
-              value="<?php echo $booking->id_card; ?>" /> </label><br>
-    <label>NamePeople <select name="NamePeople">
-       <?php foreach($people_list as $NamePeople){
-           echo "<option value= $NamePeople->id_card";
-         if($NamePeople->id_card==$booking->NamePeople){
+    <label>id_card <select name="id_card">
+       <?php foreach($people_list as $people){
+           echo "<option value $people->id_card";
+         if($people->id_card==$booking->id_card){
              echo " selected='selected'" ;
             }
-            echo ">$NamePeople->NamePeople</option>";
-      }?></select></label><br>
-    <label>LastnameP <select name="LastnameP">
-       <?php foreach($people_list as $LastnameP){
-           echo "<option value= $LastnameP->id_card";
-         if($LastnameP->id_card==$booking->LastnameP){
-             echo " selected='selected'" ;
-            }
-            echo ">$LastnameP->LastnameP</option>";
-      }?></select></label><br>
+            echo ">$people->id_card</option>";
+          }?></select></label><br>
+    
     <label>Name_checkpoint <select name="Name_checkpoint">
        <?php foreach($CheckPointList as $Name_checkpoint){
          echo "<option value= $Name_checkpoint->id_cp";
@@ -34,6 +25,7 @@
     
 
     <input type="hidden" name="controller" value="booking"/>
+    <input type="hidden" name="IDB" value="<?php echo $booking->id_b;?>" />
     <button type="submit" name="action" value="index">Back</button>
     <button type="submit" name="action" value="update">update</button>
 </form>
