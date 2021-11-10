@@ -7,7 +7,7 @@
               value="<?php echo $booking->time_b; ?>" /> </label><br>
     <label>id_card <select name="new_id">
        <?php foreach($people_list as $people){
-           echo "<option value $people->id_card";
+           echo "<option value= $people->id_card";
          if($people->id_card==$booking->id_card){
              echo " selected='selected'" ;
             }
