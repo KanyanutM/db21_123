@@ -28,7 +28,7 @@ class ATKtest{
         //echo "1111111111";
         $atkList=[];
         require("connection_connect.php");
-        $sql ="SELECT ATKtest.id_atk,ATKtest.date_atk,ATKtest.time_atk,ATKtest.results,A.id_b,A.id_card,A.NamePeople,A.LastnameP,A.name 
+        $sql ="SELECT ATKtest.id_atk,ATKtest.date_atk,ATKtest.time_atk,ATKtest.results,A.id_b,A.id_card,A.NamePeople,A.LastnameP,A.name AS Name_checkpoint
         FROM (SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.NamePeople,B.LastnameP,CheckPoint.name 
         FROM (SELECT Booking.id_b,Booking.date_b,Booking.time_b,Booking.id_card,People.NamePeople,People.LastnameP ,Booking.id_checkpoint 
         FROM Booking INNER JOIN People ON Booking.id_card = People.id_card) AS B 
@@ -45,7 +45,7 @@ class ATKtest{
             $id_card =$my_row[id_card];
             $NamePeople = $my_row[NamePeople];
             $LastnameP = $my_row[LastnameP];
-            $Name_checkpoint = $my_row[name];
+            $Name_checkpoint = $my_row[Name_checkpoint];
             $atkList[]= new ATKtest($id_atk,$date_atk,$time_atk,$results,$id_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint);
         }
 
@@ -56,11 +56,11 @@ class ATKtest{
     public static function get($id_atk){
         //echo "get" ; 
         require("connection_connect.php");
-        $sql ="SELECT ATKtest.id_atk,ATKtest.date_atk,ATKtest.time_atk,ATKtest.results,A.id_b,A.id_card,A.NamePeople,A.LastnameP,A.name 
+        $sql ="SELECT ATKtest.id_atk,ATKtest.date_atk,ATKtest.time_atk,ATKtest.results,A.id_b,A.id_card,A.NamePeople,A.LastnameP,A.name AS Name_checkpoint
         FROM (SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.NamePeople,B.LastnameP,CheckPoint.name 
         FROM (SELECT Booking.id_b,Booking.date_b,Booking.time_b,Booking.id_card,People.NamePeople,People.LastnameP ,Booking.id_checkpoint 
         FROM Booking INNER JOIN People ON Booking.id_card = People.id_card) AS B 
-        INNER JOIN CheckPoint ON B.id_checkpoint = CheckPoint.id) AS A INNER JOIN ATKtest ON ATKtest.id_b =A.id_b 
+        INNER JOIN CheckPoint ON B.id_checkpoint = CheckPoint.id) AS A INNER JOIN ATKtest ON ATKtest.id_b =A.id_b
         WHERE id_atk = '$id_atk'" ;
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
@@ -72,7 +72,7 @@ class ATKtest{
         $id_card =$my_row[id_card];
         $NamePeople = $my_row[NamePeople];
         $LastnameP = $my_row[LastnameP];
-        $Name_checkpoint = $my_row[name];
+        $Name_checkpoint = $my_row[Name_checkpoint];
         //echo $id_card;
         require("connection_close.php");
         return new ATKtest($id_atk,$date_atk,$time_atk,$results,$id_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint);
@@ -94,11 +94,11 @@ class ATKtest{
     {
         $atkList=[];
         require("connection_connect.php");
-        $sql = "SELECT ATKtest.id_atk,ATKtest.date_atk,ATKtest.time_atk,ATKtest.results,A.id_b,A.id_card,A.NamePeople,A.LastnameP,A.name 
+        $sql = "SELECT ATKtest.id_atk,ATKtest.date_atk,ATKtest.time_atk,ATKtest.results,A.id_b,A.id_card,A.NamePeople,A.LastnameP,A.name AS Name_checkpoint
         FROM (SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.NamePeople,B.LastnameP,CheckPoint.name 
         FROM (SELECT Booking.id_b,Booking.date_b,Booking.time_b,Booking.id_card,People.NamePeople,People.LastnameP ,Booking.id_checkpoint 
         FROM Booking INNER JOIN People ON Booking.id_card = People.id_card) AS B 
-        INNER JOIN CheckPoint ON B.id_checkpoint = CheckPoint.id) AS A INNER JOIN ATKtest ON ATKtest.id_b =A.id_b  
+        INNER JOIN CheckPoint ON B.id_checkpoint = CheckPoint.id) AS A INNER JOIN ATKtest ON ATKtest.id_b =A.id_b 
         where (ATKtest.id_atk LIKE '%$key%' OR ATKtest.date_atk LIKE '%$key%' OR ATKtest.time_atk LIKE '%$key%' OR ATKtest.results LIKE '%$key%' 
         OR A.id_b LIKE '%$key%' OR A.id_card LIKE '%$key%' OR A.NamePeople LIKE '%$key%' OR A.LastnameP LIKE '%$key%' OR A.name LIKE '%$key%')";
         $result=$conn->query($sql);
@@ -112,7 +112,7 @@ class ATKtest{
             $id_card =$my_row[id_card];
             $NamePeople = $my_row[NamePeople];
             $LastnameP = $my_row[LastnameP];
-            $Name_checkpoint = $my_row[name];
+            $Name_checkpoint = $my_row[Name_checkpoint];
             $atkList[]=new ATKtest($id_atk,$date_atk,$time_atk,$results,$id_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint);
             
         }
@@ -129,7 +129,7 @@ class ATKtest{
         //echo $extra_color ; 
         $sql = "UPDATE ATKtest 
                 SET  id_atk = '$id_atk' , date_atk = '$date_atk', time_atk = '$time_atk' , results = '$results' , id_b = '$id_b'
-                , id_card = '$id_card', NamePeople = '$NamePeople', LastnameP = '$LastnameP' , NameCheckPoint = '$Name_checkpoint'
+                , id_card = '$id_card', NamePeople = '$NamePeople', LastnameP = '$LastnameP' , Name_checkpoint = '$Name_checkpoint'
                 WHERE id_b = '$NEWIDatk' " ;
         $result=$conn->query($sql);
         //echo $extra_color ; 
