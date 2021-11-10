@@ -108,13 +108,15 @@ class Booking{
 
     public static function update($id_b,$date_b,$time_b,$id_card,$Name_checkpoint,$NEWIDB)
     {
-        echo $id_b,$date_b,$time_b,$id_card,$Name_checkpoint,$NEWIDB;
+        //echo $id_b,$date_b,$time_b,$id_card,$Name_checkpoint,$NEWIDB;
         //echo "1" ; 
         require("connection_connect.php");
         //echo $extra_color ; 
         $sql = "UPDATE `Booking` SET `date_b`='$date_b',`time_b`='$time_b',
-        `id_card`='$id_card',`id_checkpoint`='$Name_checkpoint' WHERE id_b = '$NEWIDB' " ;
+        `id_card`='$id_card',`id_checkpoint`='$Name_checkpoint' WHERE id_b = '$id_b' " ;
         $result=$conn->query($sql);
+        //echo $id_b,$date_b,$time_b,$id_card,$Name_checkpoint,$NEWIDB;
+        //echo "         ";
         //echo 11111111 ; 
         require("connection_close.php");
         return "update success $result row";
