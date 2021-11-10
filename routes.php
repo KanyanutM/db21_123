@@ -26,8 +26,8 @@ function call($controller ,$action){
                          require_once("./model/booking.php"); 
                          require_once("./model/CheckPoint.php"); 
                          require_once("./model/people.php");
-                        // require_once("./model/staff_detail.php");
-                        // require_once("./model/staff.php")
+                         require_once("./model/staff_detail.php");
+                         require_once("./model/staff.php");
                          $controller = new ATKtestController(); break ;
     }
     $controller->{$action}(); 
