@@ -27,7 +27,7 @@
         $id_card =$_GET['id_card'];
         $NamePeople = $_GET['NamePeople'];
         $LastnameP = $_GET['LastnameP'];
-        $Name_checkpoint = $_GET['name'];
+        $Name_checkpoint = $_GET['Name_checkpoint'];
         //echo $id_card,$Name,$lastname,$Address,$county,$Province,$Phone; 
         
         ATKtest::Add($id_atk,$date_atk,$time_atk,$results,$id_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint) ;
@@ -44,37 +44,39 @@
     
     public function updateForm() 
     {
-        $id_b = $_GET['id_atk'];
-        $booking = Booking::get($id_b);
-        require_once("./views/booking/updateForm.php");
+        $id_atk = $_GET['id_atk'];
+        $atktest = ATKtest::get($id_atk);
+        require_once("./views/ATKtest/updateForm.php");
     }
 
     public function update()
     {
+        $id_atk = $_GET['id_atk'];
+        $NEWID = $_GET['ID'];
+        $date_atk = $_GET['date_atk'];
+        $time_atk = $_GET['time_atk'];
+        $results = $_GET['results'];
         $id_b = $_GET['id_b'];
-        $NEWIDB = $_GET['IDB'];
-        $date_b = $_GET['date_b'];
-        $time_b = $_GET['time_b'];
         $id_card =$_GET['id_card'];
         $NamePeople = $_GET['NamePeople'];
         $LastnameP = $_GET['LastnameP'];
-        $Name_checkpoint = $_GET['NameCheckPoint'];
-        Booking::update($id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint,$NEWIDB); 
-        BookingController::index();
+        $Name_checkpoint = $_GET['Name_checkpoint'];
+        ATKtest::update($id_atk,$date_atk,$time_atk,$results,$id_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint,$NEWID); 
+        ATKtestController::index();
     }
 
     public function deleteConfirm()
     {
         //echo "11111111";
-        $id_b = $_GET['id_b'];  
-        $booking = Booking::get($id_b) ;
-        require_once("./views/booking/deleteConfirm.php");
+        $id_atk = $_GET['id_atk'];  
+        $atktest = ATKtest::get($id_atk) ;
+        require_once("./views/ATKtest/deleteConfirm.php");
     }
     public function delete()
     {
-       $id_b = $_GET['id_b'];
-       booking::delete($id_b);
-       BookingController::index();
+       $id_atk = $_GET['id_atk'];
+       ATKtest::delete($id_atk);
+       ATKtestController::index();
     }
 
 }
