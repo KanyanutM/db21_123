@@ -22,14 +22,15 @@
         $date_b = $_GET['date_b'];
         $time_b = $_GET['time_b'];
         $id_card =$_GET['id_card'];
-        $NamePeople = $_GET['NamePeople'];
-        $LastnameP = $_GET['LastnameP'];
+       // $NamePeople = $_GET['NamePeople'];
+       // $LastnameP = $_GET['LastnameP'];
         $Name_checkpoint = $_GET['Name_checkpoint'];
-        //echo $id_card,$Name,$lastname,$Address,$county,$Province,$Phone; 
+        //echo $id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint; 
         
-        Booking::Add($id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint) ;
+        Booking::Add($id_b,$date_b,$time_b,$id_card,$Name_checkpoint) ;
         //echo $add ;
-        BookingController::index() ;
+        //echo $id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint; 
+        BookingController::index();
     }
 
     public function search()
