@@ -24,7 +24,7 @@ class Booking{
         //echo "1111111111";
         $bookingList=[];
         require("connection_connect.php");
-        $sql ="SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.NamePeople,B.LastnameP,CheckPoint.name  FROM 
+        $sql ="SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.NamePeople,B.LastnameP,CheckPoint.name AS Name_checkpoint  FROM 
         (SELECT Booking.id_b,Booking.date_b,Booking.time_b,Booking.id_card,People.NamePeople,People.LastnameP ,Booking.id_checkpoint 
         FROM Booking INNER JOIN People ON Booking.id_card = People.id_card) AS B INNER JOIN CheckPoint ON B.id_checkpoint = CheckPoint.id " ;
         $result=$conn->query($sql);
@@ -37,7 +37,7 @@ class Booking{
             $id_card =$my_row[id_card];
             $NamePeople = $my_row[NamePeople];
             $LastnameP = $my_row[LastnameP];
-            $Name_checkpoint = $my_row[name];
+            $Name_checkpoint = $my_row[Name_checkpoint];
             $bookingList[]= new Booking($id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint);
         }
 
@@ -48,9 +48,9 @@ class Booking{
     public static function get($id_b){
         //echo "get" ; 
         require("connection_connect.php");
-        $sql ="SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.NamePeople,B.LastnameP,CheckPoint.name  FROM 
+        $sql ="SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.NamePeople,B.LastnameP,CheckPoint.name AS Name_checkpoint  FROM 
         (SELECT Booking.id_b,Booking.date_b,Booking.time_b,Booking.id_card,People.NamePeople,People.LastnameP ,Booking.id_checkpoint 
-        FROM Booking INNER JOIN People ON Booking.id_card = People.id_card) AS B INNER JOIN CheckPoint ON B.id_checkpoint = CheckPoint.id 
+        FROM Booking INNER JOIN People ON Booking.id_card = People.id_card) AS B INNER JOIN CheckPoint ON B.id_checkpoint = CheckPoint.id
         WHERE id_b = '$id_b'" ;
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
@@ -60,19 +60,19 @@ class Booking{
         $id_card =$my_row[id_card];
         $NamePeople = $my_row[NamePeople];
         $LastnameP = $my_row[LastnameP];
-        $Name_checkpoint = $my_row[name];
+        $Name_checkpoint = $my_row[Name_checkpoint];
         //echo $id_card;
         require("connection_close.php");
         return new Booking($id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint);
     }
 
-    public static function Add($id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint)
+    public static function Add($id_b,$date_b,$time_b,$id_card,$Name_checkpoint)
     {
         
         require("connection_connect.php");
-        //echo $QID ; 
-        $sql ="INSERT INTO Booking(id_b,data_b,time_b,id_card,NamePeople,LastnameP,Name_checkpoint) 
-               VALUES ('$id_b','$date_b','$time_b','$id_card','$NamePeople','$LastnameP','$Name_checkpoint')";
+        //echo 1111 ; 
+        $sql ="INSERT INTO Booking(id_b,data_b,time_b,id_card,Name_checkpoint) 
+               VALUES ('$id_b','$date_b','$time_b','$id_card','$Name_checkpoint')";
         $result=$conn->query($sql);
         require("connection_close.php");
         return "Add success $result rows";
@@ -82,7 +82,7 @@ class Booking{
     {
         $bookingList=[];
         require("connection_connect.php");
-        $sql = "SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.NamePeople,B.LastnameP,CheckPoint.name  FROM 
+        $sql = "SELECT B.id_b,B.date_b,B.time_b,B.id_card,B.NamePeople,B.LastnameP,CheckPoint.name AS Name_checkpoint  FROM 
         (SELECT Booking.id_b,Booking.date_b,Booking.time_b,Booking.id_card,People.NamePeople,People.LastnameP ,Booking.id_checkpoint 
         FROM Booking INNER JOIN People ON Booking.id_card = People.id_card) AS B INNER JOIN CheckPoint ON B.id_checkpoint = CheckPoint.id 
         where (B.id_b LIKE '%$key%' OR B.date_b LIKE '%$key%' OR B.time_b LIKE '%$key%' OR B.id_card LIKE '%$key%' 
