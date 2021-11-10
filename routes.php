@@ -2,7 +2,7 @@
 $controllers = array('pages'=>['home','error'],
 'people' =>['index','newPeople','addPeople','search','updateForm','update','deleteConfirm','delete'],
 'booking' =>['index','newBooking','addBooking','search','updateForm','update','deleteConfirm','delete'],
-'ATKtest' =>['index']) ; 
+'ATKtest' =>['index','newATK','addATK','search','updateForm','update','deleteConfirm','delete']) ; 
 
  
 
@@ -23,6 +23,9 @@ function call($controller ,$action){
                          $controller = new BookingController(); break ;
 
         case "ATKtest" : require_once("./model/ATKtest.php"); 
+                         require_once("./model/booking.php"); 
+                         require_once("./model/CheckPoint.php"); 
+                         require_once("./model/people.php");
                          $controller = new ATKtestController(); break ;
     }
     $controller->{$action}(); 
