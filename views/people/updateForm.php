@@ -16,6 +16,7 @@
     
 
     <input type="hidden" name="controller" value="people"/>
+    <input type="hidden" name="ID" value="<?php echo $people->id_card;?>" />
     <button type="submit" name="action" value="index">Back</button>
     <button type="submit" name="action" value="update">update</button>
 </form>
