@@ -71,8 +71,8 @@ class Booking{
         
         require("connection_connect.php");
         //echo 1111 ; 
-        $sql ="INSERT INTO Booking(id_b,data_b,time_b,id_card,Name_checkpoint) 
-               VALUES ('$id_b','$date_b','$time_b','$id_card','$Name_checkpoint')";
+        $sql ="INSERT INTO `Booking`(`id_b`, `date_b`, `time_b`, `id_card`, `id_checkpoint`) 
+        VALUES ('$id_b','$date_b','$time_b','$id_card','$Name_checkpoint')";
         $result=$conn->query($sql);
         require("connection_close.php");
         return "Add success $result rows";
@@ -106,20 +106,20 @@ class Booking{
 
     }
 
-    public static function update($id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint,$NEWIDB)
+    public static function update($id_b,$date_b,$time_b,$id_card,$Name_checkpoint,$NEWIDB)
     {
+        echo $id_b,$date_b,$time_b,$id_card,$Name_checkpoint,$NEWIDB;
         //echo "1" ; 
         require("connection_connect.php");
         //echo $extra_color ; 
-        $sql = "UPDATE Booking 
-                SET id_b = '$id_b' , date_b = '$date_b', time_b = '$time_b'
-                ,id_card = '$id_card', NamePeople = '$NamePeople' ,LastnameP = '$LastnameP' , Name_checkpoint = '$Name_checkpoint'
-                WHERE id_b = '$NEWIDB' " ;
+        $sql = "UPDATE `Booking` SET `date_b`='$date_b',`time_b`='$time_b',
+        `id_card`='$id_card',`id_checkpoint`='$Name_checkpoint' WHERE id_b = '$NEWIDB' " ;
         $result=$conn->query($sql);
-        //echo $extra_color ; 
+        //echo 11111111 ; 
         require("connection_close.php");
         return "update success $result row";
     }
+
 
     public static function delete($id_b)
     {
