@@ -46,9 +46,9 @@
      <td>$atk->LastnameP</td>
      <td>$atk->Name_checkpoint</td>
      <td>$atk->id_staff</td>
-     <td>$atk->first_name</td>
-     <td>$atk->last_name</td>
-     <td><a href=?controller=ATKteat&action=updateForm&id_atk=$atk->id_atk>update</a></td>
+     <td>$atk->Name_s</td>
+     <td>$atk->Lastname_s</td>
+     <td><a href=?controller=ATKtest&action=updateForm&id_atk=$atk->id_atk>update</a></td>
      <td><a href=?controller=ATKtest&action=deleteConfirm&id_atk=$atk->id_atk>delete</a> </td> </tr>" ;
  }    
 
