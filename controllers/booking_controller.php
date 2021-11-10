@@ -56,10 +56,11 @@
         $date_b = $_GET['new_date'];
         $time_b = $_GET['new_time'];
         $id_card =$_GET['new_id'];
-        echo "$NEWIDB";
+       // echo $id_card, $time_b;
+        $Name_checkpoint = $_GET['new_cp'];
        // $NamePeople = $_GET['NamePeople'];
       //  $LastnameP = $_GET['LastnameP'];
-        $Name_checkpoint = $_GET['new_cp'];
+        
         Booking::update($id_b,$date_b,$time_b,$id_card,$Name_checkpoint,$NEWIDB); 
         BookingController::index();
     }
