@@ -100,9 +100,9 @@ class ATKtest{
     {
         
         require("connection_connect.php");
-        //echo $QID ; 
+        //echo $id_atk ; 
         $sql ="INSERT INTO `ATKtest`(`id_atk`, `date_atk`, `time_atk`, `results`, `id_b`, `id_staff_checkpoint`) 
-        VALUES ('$id_atk','$date_atk','$time_atk','$result','$id_b','$id_staff')";
+        VALUES ('$id_atk','$date_atk','$time_atk','$results','$id_b',$id_staff)";
         $result=$conn->query($sql);
         require("connection_close.php");
         return "Add success $result rows";
@@ -147,15 +147,16 @@ class ATKtest{
 
     }
 
-    public static function update($id_atk,$date_atk,$time_atk,$results,$id_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint,$id_staff,$Name_s,$Lastname_s)
+    public static function update($id_atk,$date_atk,$time_atk,$results,$id_b,$id_staff)
     {
-        //echo "1" ; 
+        
         require("connection_connect.php");
         //echo $extra_color ; 
         $sql = "UPDATE `ATKtest` SET `date_atk`='$date_atk',`time_atk`='$time_atk',
-        `results`='$result',`id_b`='$id_b',`id_staff_checkpoint`='$id_staff' 
-        WHERE  id_b = '$NEWIDatk' " ;
+        `results`='$results',`id_b`='$id_b',`id_staff_checkpoint`=$id_staff 
+        WHERE  id_atk = '$id_atk' " ;
         $result=$conn->query($sql);
+        echo $id_atk,$date_atk,$time_atk,$results,$id_b,$id_staff ; 
         //echo $extra_color ; 
         require("connection_close.php");
         return "update success $result row";
