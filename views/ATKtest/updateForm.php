@@ -18,9 +18,9 @@
     
     <label>id_staff <select name="new_ids">
        <?php foreach($staffdetail_list as $staffdetail){
-         echo "<option value= $staffdetailt->id_staff_checkpoint";
+         echo "<option value= $staffdetail->id_staff_checkpoint";
          if($staffdetail->id_staff_checkpoint==$atktest->id_staff_checkpoint){
-                echo " selected='selected'" ;
+            echo " selected='selected'" ;
             }
             echo ">$staffdetail->id_staff_checkpoint</option>";
      }?></select></label><br>
