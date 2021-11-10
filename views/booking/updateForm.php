@@ -1,11 +1,11 @@
 <form method ="get" action="">
-    <label>id_b <input type="text" name="id_b"
+    <label>id_b <input type="text" name="newid"
              value="<?php echo $booking->id_b; ?>" /> </label><br>
-    <label>date_b <input type="date" name="date_b"
+    <label>date_b <input type="date" name="new_date"
               value="<?php echo $booking->date_b; ?>" /> </label><br>
-    <label>time_b <input type="time" name="time_b"
+    <label>time_b <input type="time" name="new_time"
               value="<?php echo $booking->time_b; ?>" /> </label><br>
-    <label>id_card <select name="id_card">
+    <label>id_card <select name="new_id">
        <?php foreach($people_list as $people){
            echo "<option value $people->id_card";
          if($people->id_card==$booking->id_card){
@@ -14,8 +14,8 @@
             echo ">$people->id_card</option>";
           }?></select></label><br>
     
-    <label>Name_checkpoint <select name="Name_checkpoint">
-       <?php foreach($CheckPointList as $Name_checkpoint){
+    <label>Name_checkpoint <select name="new_cp">
+       <?php foreach($checkpoint_list as $Name_checkpoint){
          echo "<option value= $Name_checkpoint->id_cp";
          if($Name_checkpoint->id_cp==$booking->Name_checkpoint){
                 echo " selected='selected'" ;
