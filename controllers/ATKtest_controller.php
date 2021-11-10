@@ -12,6 +12,8 @@
         $people_list=People::getAll();
         $checkpoint_list=CheckPoint::getAll();
         $booking_list=Booking::getAll();
+        $staff_list=Staff::getAll();
+        $staffdetail_list=StaffDetail::getAll();
         require_once("./views/ATKtest/newATK.php");
     }
 
@@ -24,13 +26,14 @@
         $time_atk = $_GET['time_atk'];
         $results = $_GET['results'];
         $id_b = $_GET['id_b'];
-        $id_card =$_GET['id_card'];
-        $NamePeople = $_GET['NamePeople'];
-        $LastnameP = $_GET['LastnameP'];
-        $Name_checkpoint = $_GET['Name_checkpoint'];
+        $id_staff = $_GET['id_staff'];
+        //$id_card =$_GET['id_card'];
+        //$NamePeople = $_GET['NamePeople'];
+       // $LastnameP = $_GET['LastnameP'];
+       // $Name_checkpoint = $_GET['Name_checkpoint'];
         //echo $id_card,$Name,$lastname,$Address,$county,$Province,$Phone; 
         
-        ATKtest::Add($id_atk,$date_atk,$time_atk,$results,$id_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint) ;
+        ATKtest::Add($id_atk,$date_atk,$time_atk,$results,$id_b,$id_staff) ;
         //echo $add ;
         ATKtestController::index() ;
     }
@@ -39,13 +42,18 @@
     {
         $key = $_GET['key'];
         $atktest_list = ATKtest::search($key);
-        require_once("./views/ATKtest/newATK.php");
+        require_once("./views/ATKtest/index_atk.php");
     }
     
     public function updateForm() 
     {
         $id_atk = $_GET['id_atk'];
         $atktest = ATKtest::get($id_atk);
+        $people_list=People::getAll();
+        $checkpoint_list=CheckPoint::getAll();
+        $booking_list=Booking::getAll();
+        $staff_list=Staff::getAll();
+        $staffdetail_list=StaffDetail::getAll();
         require_once("./views/ATKtest/updateForm.php");
     }
 
@@ -57,11 +65,12 @@
         $time_atk = $_GET['time_atk'];
         $results = $_GET['results'];
         $id_b = $_GET['id_b'];
-        $id_card =$_GET['id_card'];
-        $NamePeople = $_GET['NamePeople'];
-        $LastnameP = $_GET['LastnameP'];
-        $Name_checkpoint = $_GET['Name_checkpoint'];
-        ATKtest::update($id_atk,$date_atk,$time_atk,$results,$id_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint,$NEWID); 
+        $id_staff = $_GET['id_staff'];
+        //$id_card =$_GET['id_card'];
+        //$NamePeople = $_GET['NamePeople'];
+        //$LastnameP = $_GET['LastnameP'];
+        //$Name_checkpoint = $_GET['Name_checkpoint'];
+        ATKtest::update($id_atk,$date_atk,$time_atk,$results,$id_b,$id_staff,$NEWID); 
         ATKtestController::index();
     }
 
