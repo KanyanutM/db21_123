@@ -44,20 +44,23 @@
     {
         $id_b = $_GET['id_b'];
         $booking = Booking::get($id_b);
+        $people_list = People::getAll();
+        $checkpoint_list = CheckPoint::getAll();
         require_once("./views/booking/updateForm.php");
     }
 
     public function update()
     {
-        $id_b = $_GET['id_b'];
+        $id_b = $_GET['newid'];
         $NEWIDB = $_GET['IDB'];
-        $date_b = $_GET['date_b'];
-        $time_b = $_GET['time_b'];
-        $id_card =$_GET['id_card'];
-        $NamePeople = $_GET['NamePeople'];
-        $LastnameP = $_GET['LastnameP'];
-        $Name_checkpoint = $_GET['Name_checkpoint'];
-        Booking::update($id_b,$date_b,$time_b,$id_card,$NamePeople,$LastnameP,$Name_checkpoint,$NEWIDB); 
+        $date_b = $_GET['new_date'];
+        $time_b = $_GET['new_time'];
+        $id_card =$_GET['new_id'];
+        echo "$NEWIDB";
+       // $NamePeople = $_GET['NamePeople'];
+      //  $LastnameP = $_GET['LastnameP'];
+        $Name_checkpoint = $_GET['new_cp'];
+        Booking::update($id_b,$date_b,$time_b,$id_card,$Name_checkpoint,$NEWIDB); 
         BookingController::index();
     }
 
