@@ -1,11 +1,11 @@
 <form method ="get" action="">
-    <label>id_b <input type="text" name="newid"
+    <label>หมายเลขการจอง <input type="text" name="newid"
              value="<?php echo $booking->id_b; ?>" /> </label><br>
-    <label>date_b <input type="date" name="new_date"
+    <label>วันที่จอง <input type="date" name="new_date"
               value="<?php echo $booking->date_b; ?>" /> </label><br>
-    <label>time_b <input type="time" name="new_time"
+    <label>เวลาจอง <input type="time" name="new_time"
               value="<?php echo $booking->time_b; ?>" /> </label><br>
-    <label>id_card <select name="new_id">
+    <label>หมายเลขบัตรประชาชน <select name="new_id">
        <?php foreach($people_list as $people){
            echo "<option value= $people->id_card";
          if($people->id_card==$booking->id_card){
@@ -14,7 +14,7 @@
             echo ">$people->id_card</option>";
           }?></select></label><br>
     
-    <label>Name_checkpoint <select name="new_cp">
+    <label>ชื่อจุดตรวจ <select name="new_cp">
        <?php foreach($checkpoint_list as $Name_checkpoint){
          echo "<option value= $Name_checkpoint->id_cp";
          if($Name_checkpoint->id_cp==$booking->Name_checkpoint){
