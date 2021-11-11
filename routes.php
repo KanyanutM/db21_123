@@ -11,7 +11,11 @@ function call($controller ,$action){
     require_once("controllers/".$controller."_controller.php");
     switch($controller)
     {
-        case "pages" : $controller = new PagesController() ; break ;
+        case "pages" :  
+                        require_once("./model/sum.php");
+                        require_once("./model/booking.php"); 
+                         require_once("./model/CheckPoint.php"); 
+                        $controller = new PageController() ; break ;
 
         case "people" :  require_once("./model/people.php");
                          $controller = new PeopleController(); break ;
