@@ -1,6 +1,6 @@
 
 <?php
-    echo "กัญญาณัฐ ตั้งเจริญ 6220502060"
+    //echo "กัญญาณัฐ ตั้งเจริญ 6220502060"
 ?>
 <br>
 
@@ -17,13 +17,13 @@
 </form>
 
     <tr>
-        <td>id_b</td>
-        <td>date_b</td>
-        <td>time_b</td>
-        <td>id_card</td>
-        <td>NamePeople</td>
-        <td>LastnameP</td>
-        <td>Name_checkpoint</td>
+        <td>หมายเลขการจอง</td>
+        <td>วันที่จอง</td>
+        <td>เวลาจอง</td>
+        <td>หมายเลขบัตรประชาชน</td>
+        <td>ชื่อ</td>
+        <td>นานมสกุล</td>
+        <td>ชื่อจุดตรวจ</td>
         <td> update</td>
         <td> delete </td>
     </tr>
