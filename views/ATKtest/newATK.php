@@ -1,14 +1,14 @@
 <form method="get" action="">
     
-    <label>id_atk <input type="text" name="id_atk" /> </label><br>
-    <label>date_atk <input type="date" name="date_atk" /> </label><br>
-    <label>time_atk <input type="time" name="time_atk" /> </label><br>
-    <label>results <input type="text" name="results" /> </label><br>
+    <label>หมายเลขการตรวจ <input type="text" name="id_atk" /> </label><br>
+    <label>วันที่ตรวจ <input type="date" name="date_atk" /> </label><br>
+    <label>เวลาที่ตรวจ <input type="time" name="time_atk" /> </label><br>
+    <label>ผลการตรวจ <input type="text" name="results" /> </label><br>
     
-    <label>id_b <select name="id_b">
+    <label>หมายเลขการจอง <select name="id_b">
         <?php foreach($booking_list as $booking){echo "<option value= $booking->id_b>$booking->id_b </option>";}?></select></label><br>
 
-    <label>id_staff <select name="id_staff">
+    <label>หมายเลขผู้ตรวจ <select name="id_staff">
         <?php foreach($staffdetail_list as $staff){echo "<option value= $staff->id_staff_checkpoint>$staff->id_staff_checkpoint </option>";}?></select></label><br>
     
     
