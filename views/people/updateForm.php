@@ -1,17 +1,17 @@
 <form method ="get" action="">
-    <label>id_card <input type="text" name="id_card"
+    <label>หมายเลขบัตรประชาชน <input type="text" name="id_card"
              value="<?php echo $people->id_card; ?>" /> </label><br>
-    <label>NamePeople <input type="text" name="NamePeople"
+    <label>ชื่อ <input type="text" name="NamePeople"
               value="<?php echo $people->NamePeople; ?>" /> </label><br>
-    <label>LastnameP <input type="text" name="LastnameP"
+    <label>นามสกุล <input type="text" name="LastnameP"
              value="<?php echo $people->LastnameP; ?>" /> </label><br>
-    <label>Address <input type="text" name="Address"
+    <label>ที่อยู่ <input type="text" name="Address"
              value="<?php echo $people->Address; ?>" /> </label><br>
-    <label>County <input type="text" name="County"
+    <label>เขต <input type="text" name="County"
              value="<?php echo $people->County; ?>" /> </label><br>
-    <label>Province <input type="text" name="Province"
+    <label>จังหวัด <input type="text" name="Province"
              value="<?php echo $people->Province; ?>" /> </label><br>
-    <label>Phone <input type="text" name="Phone"
+    <label>เบอร์โทรศัพท์ <input type="text" name="Phone"
              value="<?php echo $people->Phone; ?>" /> </label><br>
     
 
