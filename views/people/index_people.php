@@ -1,5 +1,5 @@
 <?php
-    echo "กัญญาณัฐ ตั้งเจริญ 6220502060"
+    //echo "กัญญาณัฐ ตั้งเจริญ 6220502060"
 ?>
 <br>
 
@@ -16,13 +16,13 @@
 </form>
 
     <tr>
-        <td>id_card</td>
-        <td>NamePeople</td>
-        <td>LastnameP</td>
-        <td>Address</td>
-        <td>County</td>
-        <td>Province</td>
-        <td>Phone</td>
+        <td>หมายเลขบัตรประชาชน</td>
+        <td>ชื่อ</td>
+        <td>นามสกุล</td>
+        <td>ที่อยู่</td>
+        <td>เขต</td>
+        <td>จังหวัด</td>
+        <td>เบอร์โทรศัพท์</td>
         <td> update</td>
         <td> delete </td>
     </tr>
